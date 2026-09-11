@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonathan Popat — Cloud &amp; DevOps Portfolio</title>
+<meta name="description" content="Jonathan Popat — Cloud Computing &amp; DevOps portfolio. AWS, Linux, Docker, Kubernetes, automation, and hands-on cloud infrastructure projects.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a1622">
+<meta name="author" content="Jonathan Popat">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jonathan Popat — Cloud & DevOps Portfolio">
+<meta property="og:description" content="Cloud Computing & DevOps portfolio — AWS, Linux, Docker, Kubernetes, automation, and hands-on infrastructure projects.">
+<meta property="og:site_name" content="Jonathan Popat">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jonathan Popat — Cloud & DevOps Portfolio">
+<meta name="twitter:description" content="Cloud Computing & DevOps portfolio — AWS, Linux, Docker, Kubernetes, automation, and hands-on infrastructure projects.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230a1622'/%3E%3Crect x='22' y='22' width='24' height='24' rx='4' fill='none' stroke='%235fb4e0' stroke-width='5'/%3E%3Crect x='54' y='54' width='24' height='24' rx='4' fill='none' stroke='%235fb4e0' stroke-width='5'/%3E%3Cline x1='46' y1='34' x2='54' y2='66' stroke='%235fb4e0' stroke-width='4'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jonathan Popat",
+  "jobTitle": "Cloud/DevOps Engineer",
+  "address": { "@type": "PostalAddress", "addressLocality": "Pune", "addressRegion": "Maharashtra", "addressCountry": "IN" },
+  "email": "mailto:jonathanpopat@gmail.com",
+  "sameAs": ["https://github.com/jonathanpopat"],
+  "knowsAbout": ["AWS", "Cloud Computing", "DevOps", "Docker", "Kubernetes", "Linux", "Python"]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0a141f;
+    --grid-line:rgba(45,105,160,0.22);
+    --panel:#0e2036;
+    --panel-2:#112843;
+    --border:#1e4568;
+    --border-strong:#2f7cb8;
+    --text:#eaf4ff;
+    --muted:#7fa2c2;
+    --muted-2:#4d6f8f;
+    --accent:#5fb4e0;
+    --accent-strong:#8fd0ff;
+    --accent-glow:rgba(95,180,224,0.45);
+    --amber:#e0a84f;
+    --amber-glow:rgba(224,168,79,0.4);
+    --radius:6px;
+    --sans-head:'Space Grotesk', 'IBM Plex Sans', sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+    --sans:'IBM Plex Sans', -apple-system, sans-serif;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/40px 40px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/40px 40px,
+      var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:var(--accent); text-decoration:none; transition:color .15s ease, text-shadow .15s ease; }
+  a:hover{ text-decoration:underline; text-shadow:0 0 10px var(--accent-glow); }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, summary:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:2px;
+  }
+
+  .wrap{ max-width:800px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- Nav ---------- */
+  .site-nav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(10,20,31,0.88);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
+  }
+  .site-nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:14px; padding-bottom:14px;
+    gap:16px; flex-wrap:wrap;
+  }
+  .brand{
+    display:flex; align-items:center; gap:8px;
+    font-family:var(--mono); font-weight:600; font-size:0.9rem; color:var(--text);
+  }
+  .brand-mark{
+    width:16px; height:16px; border:1.5px solid var(--accent); border-radius:3px;
+    box-shadow:0 0 8px var(--accent-glow);
+  }
+  .nav-links{ display:flex; gap:20px; flex-wrap:wrap; font-family:var(--mono); font-size:0.8rem; }
+  .nav-links a{ color:var(--muted); text-decoration:none; }
+  .nav-links a:hover{ color:var(--accent-strong); text-shadow:0 0 10px var(--accent-glow); }
+
+  /* ---------- Hero ---------- */
+  .hero{ padding:64px 0 44px; }
+  .hero-eyebrow{
+    font-family:var(--mono); font-size:0.78rem; color:var(--muted-2);
+    letter-spacing:2px; text-transform:uppercase; margin:0 0 18px;
+  }
+  .hero-name{
+    font-family:var(--sans-head); font-weight:700; font-size:3.2rem; line-height:1.05;
+    margin:0 0 10px; color:var(--text); letter-spacing:-1px;
+  }
+  .hero-role{
+    font-family:var(--mono); font-size:0.9rem; color:var(--accent);
+    text-transform:uppercase; letter-spacing:1.5px; margin:0 0 20px;
+  }
+  .hero-desc{ max-width:56ch; color:var(--muted); margin:0 0 26px; }
+
+  .status-row{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px; }
+  .status-pill{
+    font-family:var(--mono); font-size:0.72rem; color:var(--accent-strong);
+    border:1px solid var(--border-strong); border-radius:999px; padding:5px 13px;
+    background:rgba(95,180,224,0.06);
+    display:flex; align-items:center; gap:6px;
+  }
+  .status-dot{
+    width:6px; height:6px; border-radius:50%; background:var(--accent);
+    box-shadow:0 0 6px var(--accent-glow);
+    animation:blink-dot 2s ease-in-out infinite;
+  }
+  @keyframes blink-dot{ 0%,100%{ opacity:1; } 50%{ opacity:0.35; } }
+
+  /* Architecture diagram */
+  .diagram-wrap{
+    position:relative; border:1px solid var(--border); border-radius:10px;
+    background:var(--panel); padding:34px 20px 26px; margin-bottom:16px;
+    overflow:hidden;
+  }
+  .diagram-label{
+    font-family:var(--mono); font-size:0.7rem; color:var(--muted-2);
+    position:absolute; top:14px; left:20px; letter-spacing:1px;
+  }
+  .diagram-hint{
+    font-family:var(--mono); font-size:0.7rem; color:var(--muted-2);
+    position:absolute; top:14px; right:20px; letter-spacing:0.5px;
+  }
+  .node-field{ position:relative; width:100%; max-width:520px; height:150px; margin:20px auto 4px; }
+  .node{
+    position:absolute; width:64px; height:64px; border-radius:8px;
+    background:var(--panel-2); border:1.5px solid var(--border-strong);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:0.62rem; color:var(--accent-strong);
+    cursor:pointer; text-decoration:none;
+    box-shadow:0 0 16px rgba(60,150,220,0.15);
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .node span{ font-size:0.95rem; font-weight:600; margin-bottom:2px; }
+  .node:hover{
+    transform:translateY(-3px);
+    border-color:var(--accent-strong);
+    box-shadow:0 0 24px var(--accent-glow);
+    text-decoration:none;
+  }
+  .n1{ left:0; top:44px; } .n2{ left:calc(50% - 32px); top:0; } .n3{ left:calc(50% - 32px); top:86px; } .n4{ right:0; top:44px; }
+  .conn{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+  .conn path{ fill:none; stroke:var(--border-strong); stroke-width:1.5; stroke-dasharray:6 6; animation:flow 1.6s linear infinite; opacity:0.75; }
+  @keyframes flow{ to{ stroke-dashoffset:-24; } }
+
+  .hero-actions{ display:flex; gap:14px; margin-top:22px; flex-wrap:wrap; }
+  .btn{
+    display:inline-block;
+    font-family:var(--mono); font-size:0.85rem;
+    border:1px solid var(--border); border-radius:var(--radius);
+    padding:9px 16px; color:var(--text); background:var(--panel);
+    transition:border-color .15s ease, color .15s ease, box-shadow .15s ease, transform .15s ease;
+  }
+  .btn:hover{
+    border-color:var(--accent); color:var(--accent-strong); text-decoration:none;
+    box-shadow:0 0 16px -2px var(--accent-glow); transform:translateY(-1px);
+  }
+  .btn.primary{ border-color:var(--border-strong); color:var(--accent-strong); }
+  .btn.primary:hover{ border-color:var(--accent); }
+
+  /* ---------- Sections ---------- */
+  section{ padding:56px 0; border-top:1px solid var(--border); }
+  .fig-label{
+    font-family:var(--mono); font-size:0.72rem; color:var(--muted-2);
+    letter-spacing:2px; margin:0 0 10px;
+  }
+  h2{
+    font-family:var(--sans-head); font-weight:600; font-size:1.7rem; color:var(--text);
+    margin:0 0 8px;
+  }
+  .h2-rule{ width:48px; height:2px; background:var(--accent); margin:0 0 24px; box-shadow:0 0 8px var(--accent-glow); }
+
+  p{ margin:0 0 14px; max-width:64ch; color:var(--text); }
+  .muted{ color:var(--muted); }
+
+  .facts{
+    display:grid; grid-template-columns:1fr 1fr; gap:0 24px;
+    font-family:var(--mono); font-size:0.85rem; margin-top:22px;
+    border-top:1px dashed var(--border);
+  }
+  .facts dt{ color:var(--muted-2); padding:10px 0 2px; }
+  .facts dd{ margin:0; color:var(--text); padding-bottom:10px; border-bottom:1px dashed var(--border); }
+
+  /* spec-sheet project cards */
+  details.spec{
+    position:relative;
+    border:1px solid var(--border); border-radius:4px;
+    margin-bottom:14px; background:var(--panel);
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  details.spec:hover{ border-color:var(--border-strong); }
+  details.spec[open]{ border-color:var(--accent); box-shadow:0 0 24px -12px var(--accent-glow); }
+  details.spec::before, details.spec::after{
+    content:""; position:absolute; width:10px; height:10px;
+    border-top:1.5px solid var(--accent); border-left:1.5px solid var(--accent);
+    top:-1px; left:-1px;
+  }
+  details.spec::after{
+    top:auto; left:auto; bottom:-1px; right:-1px;
+    border-top:none; border-left:none;
+    border-bottom:1.5px solid var(--accent); border-right:1.5px solid var(--accent);
+  }
+  details.spec summary{
+    cursor:pointer; list-style:none; padding:16px 18px;
+    display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;
+  }
+  details.spec summary::-webkit-details-marker{ display:none; }
+  .spec-caret{ font-family:var(--mono); color:var(--accent); flex-shrink:0; transition:transform .15s ease; }
+  details[open] .spec-caret{ transform:rotate(90deg); }
+  .spec-name{ font-family:var(--mono); font-weight:600; color:var(--text); text-transform:uppercase; letter-spacing:0.5px; font-size:0.92rem; }
+  .spec-stack{ font-family:var(--mono); font-size:0.75rem; color:var(--muted-2); }
+  .spec-body{ padding:0 18px 18px 44px; }
+  .spec-body ul{ margin:0; padding-left:18px; color:var(--muted); }
+  .spec-body li{ margin-bottom:6px; }
+
+  /* experience / education timeline */
+  .timeline{ position:relative; padding-left:22px; margin-top:6px; }
+  .timeline::before{ content:""; position:absolute; left:5px; top:6px; bottom:6px; width:1px; background:var(--border-strong); }
+  .entry{ position:relative; margin-bottom:28px; }
+  .entry:last-child{ margin-bottom:0; }
+  .entry::before{
+    content:""; position:absolute; left:-22px; top:6px; width:9px; height:9px; border-radius:50%;
+    background:var(--accent); box-shadow:0 0 8px var(--accent-glow);
+  }
+  .entry-head{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px; }
+  .entry-role{ font-family:var(--sans-head); font-weight:600; color:var(--text); font-size:1.05rem; }
+  .entry-org{ color:var(--muted); }
+  .entry-date{ font-family:var(--mono); font-size:0.78rem; color:var(--muted-2); white-space:nowrap; }
+  .entry ul{ margin:8px 0 0; padding-left:18px; color:var(--muted); }
+  .entry li{ margin-bottom:6px; }
+
+  /* skills */
+  .skills-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 22px; margin-top:6px; }
+  .skill-block{
+    font-family:var(--mono); font-size:0.82rem; border-left:2px solid var(--border-strong);
+    padding:4px 0 4px 12px;
+  }
+  .skill-key{ color:var(--amber); display:block; margin-bottom:2px; text-transform:uppercase; font-size:0.72rem; letter-spacing:1px; }
+  .skill-val{ color:var(--text); }
+  .soft-skills{ margin-top:26px; display:flex; flex-wrap:wrap; gap:10px; }
+  .chip{
+    font-family:var(--mono); font-size:0.75rem; color:var(--muted);
+    border:1px solid var(--border); border-radius:999px; padding:5px 13px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .chip:hover{ border-color:var(--accent); color:var(--accent-strong); }
+
+  /* github activity */
+  .gh-stats{ display:flex; gap:22px; margin-bottom:18px; font-family:var(--mono); font-size:0.85rem; flex-wrap:wrap; }
+  .gh-stats b{ color:var(--accent-strong); }
+  .gh-feed{ font-family:var(--mono); font-size:0.85rem; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+  .gh-row{ display:flex; gap:10px; padding:11px 14px; border-bottom:1px solid var(--border); align-items:baseline; flex-wrap:wrap; background:var(--panel); }
+  .gh-row:last-child{ border-bottom:none; }
+  .gh-type{ color:var(--accent); flex-shrink:0; }
+  .gh-repo{ color:var(--text); }
+  .gh-time{ color:var(--muted-2); font-size:0.78rem; margin-left:auto; }
+  .gh-status{ color:var(--muted-2); font-size:0.82rem; padding:14px; }
+
+  /* contact */
+  .contact-list{ font-family:var(--mono); font-size:0.9rem; }
+  .contact-list .line{ margin-bottom:8px; }
+  .contact-list .key{ color:var(--muted-2); }
+
+  .contact-form{ margin-top:28px; max-width:480px; }
+  .form-row{ margin-bottom:14px; display:flex; flex-direction:column; gap:6px; }
+  .form-row label{ font-family:var(--mono); font-size:0.75rem; color:var(--muted-2); text-transform:uppercase; letter-spacing:0.5px; }
+  .form-row input, .form-row textarea{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    color:var(--text); font-family:var(--sans); font-size:0.9rem;
+    padding:10px 12px; resize:vertical;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .form-row input:focus, .form-row textarea:focus{
+    outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(95,180,224,0.12);
+  }
+  .form-submit{
+    font-family:var(--mono); font-size:0.85rem; cursor:pointer;
+    border:1px solid var(--border-strong); border-radius:var(--radius);
+    padding:10px 18px; color:var(--accent-strong); background:var(--panel);
+    transition:box-shadow .15s ease, transform .15s ease, border-color .15s ease;
+  }
+  .form-submit:hover{ border-color:var(--accent); box-shadow:0 0 16px -2px var(--accent-glow); transform:translateY(-1px); }
+  .form-status{ font-family:var(--mono); font-size:0.82rem; margin-top:10px; min-height:1.2em; }
+  .form-status.ok{ color:var(--accent-strong); }
+
+  /* ---------- Title block footer ---------- */
+  footer{ border-top:1px solid var(--border); padding:0; }
+  .title-block{
+    max-width:800px; margin:0 auto; padding:0 24px;
+    display:grid; grid-template-columns:repeat(4,1fr);
+    font-family:var(--mono); font-size:0.72rem; color:var(--muted);
+    border-left:1px solid var(--border); border-right:1px solid var(--border);
+  }
+  .tb-cell{ border:1px solid var(--border); padding:12px 14px; margin:-1px 0 0 -1px; }
+  .tb-cell span{ display:block; color:var(--muted-2); font-size:0.65rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px; }
+  .tb-wide{ grid-column:1 / -1; }
+
+  /* ---------- Scroll reveal / back to top ---------- */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+  #back-to-top{
+    position:fixed; right:20px; bottom:20px; z-index:50;
+    width:42px; height:42px; border-radius:50%;
+    background:var(--panel); border:1px solid var(--border);
+    color:var(--accent); font-family:var(--mono); font-size:1rem;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transform:translateY(8px);
+    transition:opacity .2s ease, transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  #back-to-top.show{ opacity:1; pointer-events:auto; transform:translateY(0); }
+  #back-to-top:hover{ border-color:var(--accent); box-shadow:0 0 16px -2px var(--accent-glow); }
+
+  @media (max-width:640px){
+    .hero-name{ font-size:2.1rem; }
+    .facts{ grid-template-columns:1fr; }
+    .skills-grid{ grid-template-columns:1fr; }
+    .node-field{ transform:scale(0.82); }
+    .title-block{ grid-template-columns:1fr 1fr; }
+    h2{ font-size:1.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="wrap">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span> jonathan.popat</div>
+    <div class="nav-links">
+      <a href="#about">about</a>
+      <a href="#projects">projects</a>
+      <a href="#github-activity">github</a>
+      <a href="#experience">experience</a>
+      <a href="#skills">skills</a>
+      <a href="#education">education</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero wrap" id="top">
+    <h1 style="position:absolute;left:-9999px;">Jonathan Popat — Cloud &amp; DevOps Portfolio</h1>
+    <p class="hero-eyebrow">Pune, Maharashtra, India</p>
+    <p class="hero-name">Jonathan Popat</p>
+    <p class="hero-role">Cloud infrastructure · DevOps · automation</p>
+    <p class="hero-desc">Recent B.Sc. graduate pursuing the AWS Certified Solutions Architect – Associate (SAA-C03),
+    building real cloud systems — deployment, monitoring, and automated recovery — rather than just studying them.</p>
+
+    <div class="status-row">
+      <span class="status-pill"><span class="status-dot" aria-hidden="true"></span>AWS SAA-C03 — in progress</span>
+      <span class="status-pill"><span class="status-dot" aria-hidden="true"></span>3 projects deployed</span>
+      <span class="status-pill"><span class="status-dot" aria-hidden="true"></span>open to opportunities</span>
+    </div>
+
+    <div class="diagram-wrap">
+      <span class="diagram-label">FIG. 00 — SITE ARCHITECTURE</span>
+      <span class="diagram-hint">click a node</span>
+      <div class="node-field">
+        <a class="node n1" href="#projects" title="Go to projects"><span>EC2</span>projects</a>
+        <a class="node n2" href="#skills" title="Go to skills"><span>S3</span>skills</a>
+        <a class="node n3" href="#github-activity" title="Go to github activity"><span>λ</span>github</a>
+        <a class="node n4" href="#contact" title="Go to contact"><span>VPC</span>contact</a>
+        <svg class="conn" viewBox="0 0 520 150" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M64,76 L228,32"></path>
+          <path d="M64,76 L228,118"></path>
+          <path d="M292,32 L456,76"></path>
+          <path d="M292,118 L456,76"></path>
+        </svg>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn primary" href="jonathan-resume.pdf" download>download resume ↓</a>
+      <a class="btn" href="mailto:jonathanpopat@gmail.com">email me</a>
+      <a class="btn" href="#projects">view projects</a>
+    </div>
+  </section>
+
+  <section id="about" class="reveal">
+    <div class="wrap">
+      <p class="fig-label">FIG. 01 — ABOUT</p>
+      <h2>About</h2>
+      <div class="h2-rule"></div>
+      <p>Recent B.Sc. graduate moving into cloud infrastructure and DevOps, currently working toward the
+      AWS Certified Solutions Architect – Associate (SAA-C03). Most of what I know comes from building things
+      myself — deploying real applications on AWS, wiring up monitoring, and writing automation that fixes
+      problems before I have to.</p>
+      <p class="muted">Comfortable across AWS, Linux, Docker, Kubernetes, and Python — looking for an
+      entry-level Cloud or DevOps role where I can keep building.</p>
+      <dl class="facts">
+        <dt>location</dt><dd>Pune, Maharashtra, India</dd>
+        <dt>focus</dt><dd>Cloud infrastructure · DevOps · automation</dd>
+        <dt>certification</dt><dd>AWS SAA-C03 (in progress)</dd>
+        <dt>status</dt><dd>Cloud/DevOps intern @ NexGen Analytix</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="wrap">
+      <p class="fig-label">FIG. 02 — PROJECTS</p>
+      <h2>Projects</h2>
+      <div class="h2-rule"></div>
+
+      <details class="spec" open>
+        <summary>
+          <span class="spec-caret">▸</span>
+          <span class="spec-name">AWS Quick-Loan</span>
+          <span class="spec-stack">EC2 · VPC · S3 · Route 53 · ALB · Auto Scaling · PHP · MySQL · Nginx</span>
+        </summary>
+        <div class="spec-body">
+          <p class="muted" style="margin-bottom:8px;">Cloud-based loan application deployed end-to-end on AWS.</p>
+          <ul>
+            <li>Deployed a PHP-based loan application with a MySQL database on AWS EC2.</li>
+            <li>Designed VPC networking with public/private subnets, routing, a NAT Gateway, and security groups.</li>
+            <li>Configured Route 53, a load balancer, and Auto Scaling for a scalable, highly available deployment.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="spec">
+        <summary>
+          <span class="spec-caret">▸</span>
+          <span class="spec-name">Self-Healing Infrastructure</span>
+          <span class="spec-stack">EC2 · CloudWatch · SNS · Lambda · IAM · Auto Scaling · Route 53</span>
+        </summary>
+        <div class="spec-body">
+          <p class="muted" style="margin-bottom:8px;">Automated EC2 recovery system that detects and remediates failures without manual intervention.</p>
+          <ul>
+            <li>Built an automated EC2 recovery system using CloudWatch, SNS, and Lambda.</li>
+            <li>Configured CPU, memory, and disk alarms to trigger automated remediation actions.</li>
+            <li>Implemented service restarts and EC2 instance replacement, with CloudWatch logging and Auto Scaling.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="spec">
+        <summary>
+          <span class="spec-caret">▸</span>
+          <span class="spec-name">AWS Website Hosting</span>
+          <span class="spec-stack">EC2 · S3 · DynamoDB · Load Balancer · VPC · IAM · Route 53</span>
+        </summary>
+        <div class="spec-body">
+          <p class="muted" style="margin-bottom:8px;">Full website hosted and deployed on AWS with resilient, monitored delivery.</p>
+          <ul>
+            <li>Hosted and deployed a full website on AWS EC2, using S3 and DynamoDB for storage and data.</li>
+            <li>Configured a VPC, load balancer, and Auto Scaling for resilient, scalable delivery.</li>
+            <li>Set up CloudWatch monitoring with SNS/Lambda-based alerting for operational visibility.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="github-activity" class="reveal">
+    <div class="wrap">
+      <p class="fig-label">FIG. 03 — LIVE ACTIVITY</p>
+      <h2>GitHub activity</h2>
+      <div class="h2-rule"></div>
+      <div class="gh-stats" id="gh-stats"><span class="gh-status">connecting to github…</span></div>
+      <div class="gh-feed" id="gh-feed"></div>
+      <p style="margin-top:16px;">
+        <a class="btn" href="https://github.com/jonathanpopat" target="_blank" rel="noopener">view full profile on github ↗</a>
+      </p>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="wrap">
+      <p class="fig-label">FIG. 04 — EXPERIENCE</p>
+      <h2>Experience</h2>
+      <div class="h2-rule"></div>
+      <div class="timeline">
+        <div class="entry">
+          <div class="entry-head">
+            <div><span class="entry-role">Cloud/DevOps Intern</span> <span class="entry-org">— NexGen Analytix</span></div>
+            <div class="entry-date">June 2026 – Present</div>
+          </div>
+          <ul>
+            <li>Working on AWS cloud projects involving EC2, S3, and IAM under team guidance.</li>
+            <li>Assisting with monitoring and basic troubleshooting using CloudWatch.</li>
+            <li>Supporting Docker-based deployment tasks as part of ongoing DevOps workflows.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="reveal">
+    <div class="wrap">
+      <p class="fig-label">FIG. 05 — SKILLS</p>
+      <h2>Skills</h2>
+      <div class="h2-rule"></div>
+      <div class="skills-grid">
+        <div class="skill-block"><span class="skill-key">Cloud</span><span class="skill-val">EC2, S3, VPC, IAM, RDS, Lambda, EBS, ELB, Auto Scaling, Route 53, CloudFront</span></div>
+        <div class="skill-block"><span class="skill-key">DevOps</span><span class="skill-val">Docker, Kubernetes, CI/CD, IaC — learning Terraform, Jenkins, Ansible</span></div>
+        <div class="skill-block"><span class="skill-key">Monitoring</span><span class="skill-val">CloudWatch, CloudTrail</span></div>
+        <div class="skill-block"><span class="skill-key">Networking</span><span class="skill-val">TCP/IP, DNS, HTTP/HTTPS, Subnetting, Routing, VPC Networking</span></div>
+        <div class="skill-block"><span class="skill-key">Programming</span><span class="skill-val">Python — OOP, NumPy, Pandas; SQL basics; Bash</span></div>
+        <div class="skill-block"><span class="skill-key">Infrastructure</span><span class="skill-val">CloudFormation, Load Balancing, Auto Scaling</span></div>
+        <div class="skill-block"><span class="skill-key">Security</span><span class="skill-val">AWS IAM, Linux Security</span></div>
+        <div class="skill-block"><span class="skill-key">Tools</span><span class="skill-val">Git, GitHub, VS Code, MySQL</span></div>
+        <div class="skill-block"><span class="skill-key">OS</span><span class="skill-val">Linux (Ubuntu), Windows, macOS</span></div>
+      </div>
+      <div class="soft-skills">
+        <span class="chip">Strong communication</span>
+        <span class="chip">Quick learner</span>
+        <span class="chip">Adaptability &amp; team collaboration</span>
+        <span class="chip">Problem-solving mindset</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="reveal">
+    <div class="wrap">
+      <p class="fig-label">FIG. 06 — EDUCATION</p>
+      <h2>Education</h2>
+      <div class="h2-rule"></div>
+      <div class="timeline">
+        <div class="entry">
+          <div class="entry-head">
+            <div><span class="entry-role">Bachelor of Science</span> <span class="entry-org">— Dr. D.Y. Patil ACS College, Pune</span></div>
+            <div class="entry-date">2023 – June 2026</div>
+          </div>
+          <p class="muted" style="margin:0;">CGPA: 7.55</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <div class="wrap">
+      <p class="fig-label">FIG. 07 — CONTACT</p>
+      <h2>Contact</h2>
+      <div class="h2-rule"></div>
+      <p class="muted">Open to entry-level Cloud and DevOps roles — reach out any of these ways.</p>
+      <div class="contact-list">
+        <div class="line"><span class="key">email</span> — <a href="mailto:jonathanpopat@gmail.com">jonathanpopat@gmail.com</a></div>
+        <div class="line"><span class="key">phone</span> — <a href="tel:+917397848136">+91 7397848136</a></div>
+        <div class="line"><span class="key">linkedin</span> — <a href="#" id="linkedin-link">add your profile link</a></div>
+        <div class="line"><span class="key">github</span> — <a href="https://github.com/jonathanpopat" target="_blank" rel="noopener">github.com/jonathanpopat</a></div>
+        <div class="line"><span class="key">location</span> — Pune, Maharashtra, India</div>
+      </div>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <input type="hidden" name="_subject" value="New message from portfolio site">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="form-row">
+          <label for="cf-name">name</label>
+          <input id="cf-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="cf-email">email</label>
+          <input id="cf-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <label for="cf-message">message</label>
+          <textarea id="cf-message" name="message" rows="4" required></textarea>
+        </div>
+        <button class="form-submit" type="submit">send message →</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="hero-actions" style="margin-top:24px;">
+        <a class="btn primary" href="jonathan-resume.pdf" download>download resume ↓</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="title-block">
+    <div class="tb-cell"><span>Drawn by</span>Jonathan Popat</div>
+    <div class="tb-cell"><span>Rev.</span>2026.09</div>
+    <div class="tb-cell"><span>Scale</span>1:1</div>
+    <div class="tb-cell"><span>Sheet</span>01 of 01</div>
+    <div class="tb-cell tb-wide"><span>Project</span>jonathan-popat-portfolio — cloud &amp; devops</div>
+  </div>
+</footer>
+
+<a href="#top" id="back-to-top" aria-label="Back to top">↑</a>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function escapeHtml(s){
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  var backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', function(){
+    backToTop.classList.toggle('show', window.scrollY > 600);
+  }, { passive: true });
+
+  (function(){
+    var statsEl = document.getElementById('gh-stats');
+    var feedEl = document.getElementById('gh-feed');
+    var USERNAME = 'jonathanpopat';
+
+    function timeAgo(iso){
+      var diffMs = Date.now() - new Date(iso).getTime();
+      var mins = Math.floor(diffMs / 60000);
+      if(mins < 60) return mins + 'm ago';
+      var hrs = Math.floor(mins / 60);
+      if(hrs < 24) return hrs + 'h ago';
+      var days = Math.floor(hrs / 24);
+      if(days < 30) return days + 'd ago';
+      return Math.floor(days / 30) + 'mo ago';
+    }
+
+    function describe(ev){
+      var repo = ev.repo ? ev.repo.name : 'unknown/repo';
+      switch(ev.type){
+        case 'PushEvent':
+          var n = (ev.payload && ev.payload.commits) ? ev.payload.commits.length : 1;
+          return { label: 'push', text: n + ' commit' + (n===1?'':'s') + ' to', repo: repo };
+        case 'CreateEvent':
+          return { label: 'create', text: (ev.payload && ev.payload.ref_type) + ' on', repo: repo };
+        case 'WatchEvent':
+          return { label: 'star', text: 'starred', repo: repo };
+        case 'ForkEvent':
+          return { label: 'fork', text: 'forked', repo: repo };
+        case 'IssuesEvent':
+          return { label: 'issue', text: (ev.payload && ev.payload.action) + ' an issue on', repo: repo };
+        case 'PullRequestEvent':
+          return { label: 'PR', text: (ev.payload && ev.payload.action) + ' a pull request on', repo: repo };
+        default:
+          return { label: ev.type.replace('Event',''), text: 'activity on', repo: repo };
+      }
+    }
+
+    fetch('https://api.github.com/users/' + USERNAME + '/events/public')
+      .then(function(res){ if(!res.ok) throw new Error('status ' + res.status); return res.json(); })
+      .then(function(events){
+        fetch('https://api.github.com/users/' + USERNAME)
+          .then(function(r){ return r.ok ? r.json() : null; })
+          .then(function(profile){
+            if(profile){
+              statsEl.innerHTML =
+                '<span><b>' + profile.public_repos + '</b> repos</span>' +
+                '<span><b>' + profile.followers + '</b> followers</span>' +
+                '<span><b>' + profile.following + '</b> following</span>';
+            } else { statsEl.innerHTML = ''; }
+          })
+          .catch(function(){ statsEl.innerHTML = ''; });
+
+        if(!events.length){
+          feedEl.innerHTML = '<p class="gh-status">no recent public activity — check the profile link below.</p>';
+          return;
+        }
+        var rows = events.slice(0, 6).map(function(ev){
+          var d = describe(ev);
+          return '<div class="gh-row">' +
+            '<span class="gh-type">[' + escapeHtml(d.label) + ']</span>' +
+            '<span>' + escapeHtml(d.text) + '</span>' +
+            '<a class="gh-repo" href="https://github.com/' + encodeURIComponent(d.repo) + '" target="_blank" rel="noopener">' + escapeHtml(d.repo) + '</a>' +
+            '<span class="gh-time">' + timeAgo(ev.created_at) + '</span>' +
+          '</div>';
+        }).join('');
+        feedEl.innerHTML = rows;
+      })
+      .catch(function(){
+        statsEl.innerHTML = '';
+        feedEl.innerHTML = '<p class="gh-status">couldn\'t reach the github api right now — <a href="https://github.com/' + USERNAME + '" target="_blank" rel="noopener">view the profile directly</a>.</p>';
+      });
+  })();
+
+  (function(){
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    var ENDPOINT = 'https://formsubmit.co/ajax/jonathanpopat@gmail.com';
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(form.querySelector('[name="_honey"]').value){ return; }
+      if(!form.checkValidity()){
+        status.textContent = 'please fill in all fields with a valid email.';
+        status.className = 'form-status';
+        return;
+      }
+      var name = document.getElementById('cf-name').value.trim();
+      var submitBtn = form.querySelector('.form-submit');
+      submitBtn.disabled = true;
+      status.textContent = 'sending…';
+      status.className = 'form-status';
+
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      })
+        .then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+        .then(function(result){
+          if(result.ok){
+            status.textContent = 'thanks, ' + name.split(' ')[0] + ' — message sent.';
+            status.className = 'form-status ok';
+            form.reset();
+          } else {
+            status.textContent = 'message not sent — try emailing directly instead.';
+            status.className = 'form-status';
+          }
+        })
+        .catch(function(){
+          status.textContent = 'couldn\'t reach the server — try emailing directly instead.';
+          status.className = 'form-status';
+        })
+        .finally(function(){ submitBtn.disabled = false; });
+    });
+  })();
+})();
+</script>
+</body>
+</html>
